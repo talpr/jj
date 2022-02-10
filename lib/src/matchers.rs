@@ -167,7 +167,7 @@ impl Matcher for PrefixMatcher {
     }
 }
 
-struct DifferenceMatcher<'input> {
+pub struct DifferenceMatcher<'input> {
     /// The minuend
     wanted: &'input dyn Matcher,
     /// The subtrahend
