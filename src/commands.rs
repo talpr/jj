@@ -1936,9 +1936,8 @@ fn cmd_untrack(
     command: &CommandHelper,
     args: &UntrackArgs,
 ) -> Result<(), CommandError> {
-    // TODO: We should probably check that the repo was loaded at head.
     let mut workspace_command = command.workspace_helper(ui)?;
-    workspace_command.maybe_commit_working_copy(ui)?;
+    workspace_command.commit_working_copy(ui)?;
     let store = workspace_command.repo().store().clone();
     let matcher = matcher_from_values(ui, workspace_command.workspace_root(), &args.paths)?;
 
